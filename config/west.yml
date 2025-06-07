@@ -9,27 +9,25 @@ manifest:
       url-base: https://github.com/zephyrproject-rtos
 
   projects:
-    - name: zmk
+    # --------------- aici era problema ----------------
+    - name: zmk                 # NU “app”!
       remote: zmk
-      repo-path: app
+      repo-path: app            # unde să-l cloneze local
       revision: main
       import: app/west.yml
-
+    # --------------------------------------------------
     - name: zephyr
       remote: zephyrproject
       repo-path: modules/zephyr
       revision: v3.5.0
-
     - name: hal_nordic
       remote: zephyrproject
       repo-path: modules/hal/nordic
       revision: main
-
     - name: nrfx
       remote: zephyrproject
       repo-path: modules/hal/nordic/nrfx
       revision: main
-
     - name: nrfxlib
       remote: zephyrproject
       repo-path: modules/hal/nordic/nrfxlib
