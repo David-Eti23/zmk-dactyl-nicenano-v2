@@ -94,7 +94,7 @@
             bindings = <
 &kp GRAVE   &kp N1    &kp N2    &kp NUMBER_3  &kp N4     &kp N5        &kp N6         &kp N7           &kp N8         &kp N9             &kp N0            &kp EQUAL
 &kp TAB     &kp Q     &kp W     &kp E         &kp R      &kp T         &kp Y          &kp U            &kp I          &kp O              &kp P             &kp MINUS
-&kp CAPS    &kp A     &kp S     &kp D         &kp F      &kp T         &kp H          &kp J            &kp K          &kp L              &kp LEFT_BRACKET  &kp RBKT
+&kp CAPS    &kp A     &kp S     &kp D         &kp F      &kp G         &kp H          &kp J            &kp K          &kp L              &kp LEFT_BRACKET  &kp RBKT
 &kp LSHIFT  &kp Z     &kp X     &kp C         &kp V      &kp B         &kp N          &kp M            &kp SEMICOLON  &kp SQT            &kp COMMA         &kp FSLH
 &kp LCTRL   &kp LALT  &kp LEFT  &kp RIGHT     &kp SPACE  &kp RSHFT     &kp BACKSPACE  &kp ENTER        &kp DOWN       &kp UP             &kp PERIOD        &kp BACKSLASH
                       &tog 1    &kp LS(N2)    &mo LOWER  &kp ESCAPE    &mo SYMBOL     &kp C_VOLUME_UP  &kp K_APP      &kp C_VOLUME_DOWN
