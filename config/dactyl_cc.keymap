@@ -92,51 +92,51 @@
     keymap {
         compatible = "zmk,keymap";
 
+        /* ──────────────── LAYER 0 – DEFAULT ──────────────── */
         default_layer {
             bindings = <
-&kp F1           &kp F2  &kp F3            &kp F4      &kp F5     &kp F6       &kp F7      &kp F8     &kp F9     &kp F10      &kp F11   &kp F12
-&kp MINUS        &kp N1  &kp N2            &kp N3      &kp N4     &kp N5       &kp N6      &kp N7     &kp N8     &kp N9       &kp N0    &kp EQUAL
-&kp LBKT         &kp Q   &kp W             &kp E       &kp R      &kp T        &kp Y       &kp U      &kp I      &kp O        &kp P     &kp RBKT
-&kp NON_US_BSLH  &kp A   &kp S             &kp D       &kp F      &kp G        &kp H       &kp J      &kp K      &kp L        &kp SEMI  &kp FSLH
-&kp LSHIFT       &kp Z   &kp X             &kp C       &kp V      &kp B        &kp N       &kp M      &kp COMMA  &kp DOT      &kp FSLH  &kp RSHIFT
-                         &kp SINGLE_QUOTE  &kp LS(N2)  &mo LOWER  &kp SPACE    &mo SYMBOL  &kp LALT   &kp K_APP  &kp LG(TAB)
-                         &kp TAB           &kp ESC     &kp LCTRL  &kp BSPC     &kp RET     &mo RAISE  &kp LPAR   &kp RPAR
+        /* R0 */ &kp GRAVE  &kp N1   &kp N2   &kp N3   &kp N4   &kp N5        &kp N6   &kp N7   &kp N8   &kp N9   &kp N0   &kp EQUAL
+        /* R1 */ &kp TAB    &kp Q    &kp W    &kp E    &kp R    &kp T         &kp Y    &kp U    &kp I    &kp O    &kp P    &kp MINUS
+        /* R2 */ &kp CAPS   &kp A    &kp S    &kp D    &kp F    &kp G         &kp H    &kp J    &kp K    &kp L    &kp SEMI &kp RBKT
+        /* R3 */ &kp LSFT   &kp Z    &kp X    &kp C    &kp V    &kp B         &kp N    &kp M    &kp COMMA &kp DOT &kp SLASH &kp RBKT
+        /* R4 */ &kp LCTRL  &kp LALT &kp LEFT &kp RIGHT &kp SPACE &kp ESC     &kp BSPC &kp ENTER &kp APP &kp LGUI &kp C_VOL_UP &kp C_VOL_DN
+        /* R5 */          &none   &none   &kp LGUI &mo LOWER &mo RAISE &kp ESC       &none   &none   &kp BSPC &kp ENTER &kp APP &kp LGUI
             >;
         };
 
+        /* ──────────────── LAYER 1 – LOWER ──────────────── */
         LOWER {
             bindings = <
-&kp GRAVE  &none      &kp PAUSE_BREAK  &kp SLCK             &kp PSCRN  &kp PSCRN        &bt BT_CLR  &none      &none          &none        &none      &kp C_MUTE
-&kp MINUS  &kp N1     &kp N2           &kp N3               &kp N4     &kp N5           &kp N6      &kp N7     &kp N8         &kp N9       &kp N0     &kp EQUAL
-&kp LT     &none      &kp LC(W)        &kp LC(J)            &kp LC(Y)  &kp LS(LC(T))    &kp PG_UP   &kp HOME   &kp UP         &kp END      &kp P      &kp GT
-&kp CAPS   &kp LC(A)  &kp LC(S)        &kp LC(D)            &kp LC(F)  &kp LC(N)        &kp PG_DN   &kp LEFT   &kp DOWN       &kp RIGHT    &kp COLON  &kp LS(FSLH)
-&kp CAPS   &kp LC(Z)  &kp LC(X)        &kp LC(C)            &kp LC(V)  &kp ESC          &kp INS     &kp M      &kp LS(COMMA)  &kp LS(DOT)  &kp PLUS   &kp MINUS
-                      &kp AMPS         &kp LS(NON_US_BSLH)  &mo LOWER  &kp SPACE        &kp LS(N3)  &kp CARET  &kp DOLLAR     &kp PRCNT
-                      &kp TAB          &kp ESC              &kp LCTRL  &kp DEL          &kp EXCL    &kp EQUAL  &kp LBRC       &kp RBRC
+        /* R0 */ &kp F1     &kp F2    &kp F3    &kp F4    &kp F5    &kp F6        &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
+        /* R1 */ &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT &kp CARET     &kp AMPS  &kp ASTERISK &kp LPAR &kp RPAR &kp UNDER &kp PLUS
+        /* R2 */ &kp TILDE  &kp Q     &kp W     &kp E     &kp R     &kp T         &kp PG_UP &kp HOME   &kp UP    &kp END   &kp PIPE  &kp GRAVE
+        /* R3 */ &kp CAPS   &kp A     &kp S     &kp D     &kp F     &kp G         &kp PG_DN &kp LEFT   &kp DOWN  &kp RIGHT &kp COLON &kp BSLH
+        /* R4 */ &kp LCTRL  &kp LALT  &none     &none     &kp SPACE &kp ESC       &kp INS   &none      &none     &none     &kp MUTE  &kp C_MUTE
+        /* R5 */          &none   &none   &kp LGUI &mo LOWER &mo RAISE &kp ESC       &none   &none   &none   &none   &none   &none
             >;
         };
 
+        /* ──────────────── LAYER 2 – RAISE ──────────────── */
         RAISE {
             bindings = <
-&kp F11     &none            &none            &none            &none            &none              &none      &none         &none     &none          &none     &kp C_MUTE
-&none       &kp N1           &kp N2           &kp N3           &kp N4           &kp N5             &kp N6     &kp N7        &kp N8    &kp N9         &kp N0    &kp C_VOL_UP
-&none       &none            &none            &none            &none            &none              &kp PG_UP  &kp HOME      &kp UP    &kp END        &none     &kp C_VOL_DN
-&sl SYMBOL  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_NUMBER_4  &kp KP_NUMBER_5    &kp PG_DN  &kp LC(LEFT)  &kp DOWN  &kp LC(RIGHT)  &none     &kp C_MUTE
-&kp GRAVE   &kp TILDE2       &none            &none            &none            &none              &kp INS    &none         &kp LBRC  &kp RBRC       &kp FSLH  &kp ASTRK
-                             &kp NON_US_HASH  &kp TILDE2       &kp COLON        &kp SEMI           &kp DEL    &kp N4        &kp N5    &kp N6
-                             &kp LC(C)        &kp LC(V)        &kp LC(X)        &kp UNDER          &kp EQUAL  &kp EXCL      &kp LBKT  &kp RBKT
+        /* R0 */ &kp F13    &kp F14   &kp F15   &kp F16   &kp F17   &kp F18       &kp F19   &kp F20   &kp F21   &kp F22   &kp F23   &kp F24
+        /* R1 */ &kp MINUS  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5        &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp EQUAL
+        /* R2 */ &kp LBKT   &kp Q     &kp W     &kp E     &kp R     &kp T         &kp Y     &kp U     &kp I     &kp O     &kp P     &kp RBKT
+        /* R3 */ &kp NON_US_BSLH &kp A &kp S    &kp D     &kp F     &kp G         &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp FSLH
+        /* R4 */ &kp LCTRL  &kp LALT  &kp LEFT  &kp RIGHT &kp SPACE &kp ESC       &kp BSPC  &kp ENTER &kp APP   &kp LGUI  &kp VOL_UP &kp VOL_DN
+        /* R5 */          &none   &none   &kp LGUI &mo LOWER &mo RAISE &kp ESC       &none   &none   &none   &none   &none   &none
             >;
         };
 
+        /* ──────────────── LAYER 3 – SYMBOL ──────────────── */
         SYMBOL {
             bindings = <
-&none       &none   &none   &none   &none   &none      &none   &none   &none    &none    &none   &none
-&bt BT_CLR  &none   &none   &none   &none   &none      &none   &none   &none    &none    &none   &none
-&bt BT_NXT  &none   &none   &none   &none   &none      &none   &none   &none    &none    &none   &none
-&bt BT_PRV  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5     &kp N6  &kp N7  &kp N8   &kp N9   &kp N0  &none
-&kp LBKT    &none   &none   &none   &none   &none      &none   &none   &none    &none    &none   &none
-                    &kp N1  &kp N2  &kp N3  &kp N4     &kp N1  &kp N2  &kp N3   &kp N4
-                    &kp N5  &kp N6  &kp N7  &kp DEL    &kp N9  &kp N0  &kp F11  &kp F12
+        /* R0 */ &bt BT_CLR &none &none &none &none &none          &none &none &none &none &none &none
+        /* R1 */ &bt BT_PRV &bt BT_NXT &none &none &none &none     &kp KP_PLUS &kp KP_MINUS &kp KP_ASTERISK &kp KP_SLASH &none &none
+        /* R2 */ &none &none &none &none &none &none               &kp LBKT &kp RBKT &kp LCURLY &kp RCURLY &kp LT &kp GT
+        /* R3 */ &none &none &none &none &none &none               &kp AMPS &kp PIPE &kp BSLH &kp CARET &kp PERCENT &kp HASH
+        /* R4 */ &none &none &none &none &none &none               &none &none &none &none &none &none
+        /* R5 */          &none &none &none &none &none &none          &none &none &none &none &none &none
             >;
         };
     };
