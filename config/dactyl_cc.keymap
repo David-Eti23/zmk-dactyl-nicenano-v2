@@ -6,7 +6,7 @@
 //  ###########        WORKING 2024/03/23       ###############
 //  ###########################################################
 // #############            LAYERS            #################
- 
+
 #define SYM_L   1
 #define NAV_L   2
 #define NAV2_L  3
@@ -45,9 +45,7 @@
     tapping-term-ms = <150>;
 };
 
-&sl {
-    release-after-ms = <2000>;
-};
+&sl { release-after-ms = <2000>; };
 
 / {
     conditional_layers {
@@ -94,13 +92,13 @@
 
         default_layer {
             bindings = <
-&kp F1           &kp F2  &kp F3            &kp F4      &kp F5     &kp F6       &kp F7      &kp F8     &kp F9     &kp F10      &kp F11   &kp F12
-&kp MINUS        &kp N1  &kp N2            &kp N3      &kp N4     &kp N5       &kp N6      &kp N7     &kp N8     &kp N9       &kp N0    &kp EQUAL
-&kp LBKT         &kp Q   &kp W             &kp E       &kp R      &kp T        &kp Y       &kp U      &kp I      &kp O        &kp P     &kp RBKT
-&kp NON_US_BSLH  &kp A   &kp S             &kp D       &kp F      &kp G        &kp H       &kp J      &kp K      &kp L        &kp SEMI  &kp FSLH
-&kp LSHIFT       &kp Z   &kp X             &kp C       &kp V      &kp B        &kp N       &kp M      &kp COMMA  &kp DOT      &kp FSLH  &kp RSHIFT
-                         &kp SINGLE_QUOTE  &kp LS(N2)  &mo LOWER  &kp SPACE    &mo SYMBOL  &kp LALT   &kp K_APP  &kp LG(TAB)
-                         &kp TAB           &kp ESC     &kp LCTRL  &kp BSPC     &kp RET     &mo RAISE  &kp LPAR   &kp RPAR
+&kp GRAVE   &kp N1    &kp N2    &kp NUMBER_3  &kp N4     &kp N5        &kp N6         &kp N7           &kp N8         &kp N9             &kp N0            &kp EQUAL
+&kp TAB     &kp Q     &kp W     &kp E         &kp R      &kp T         &kp Y          &kp U            &kp I          &kp O              &kp P             &kp MINUS
+&kp CAPS    &kp A     &kp S     &kp D         &kp F      &kp T         &kp H          &kp J            &kp K          &kp L              &kp LEFT_BRACKET  &kp RBKT
+&kp LSHIFT  &kp Z     &kp X     &kp C         &kp V      &kp B         &kp N          &kp M            &kp SEMICOLON  &kp SQT            &kp COMMA         &kp FSLH
+&kp LCTRL   &kp LALT  &kp LEFT  &kp RIGHT     &kp SPACE  &kp RSHFT     &kp BACKSPACE  &kp ENTER        &kp DOWN       &kp UP             &kp PERIOD        &kp BACKSLASH
+                      &tog 1    &kp LS(N2)    &mo LOWER  &kp ESCAPE    &mo SYMBOL     &kp C_VOLUME_UP  &kp K_APP      &kp C_VOLUME_DOWN
+                      &none     &none         &none      &none         &none          &none            &none          &none
             >;
         };
 
