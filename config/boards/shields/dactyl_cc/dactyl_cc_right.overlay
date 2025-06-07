@@ -6,19 +6,13 @@
     col-offset = <6>;
 };
 
-kscan0: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-
-        col-gpios = <
-            &gpio1 11 GPIO_ACTIVE_LOW
-            &gpio1 13 GPIO_ACTIVE_LOW
-            &gpio1 15 GPIO_ACTIVE_LOW
-            &gpio0  2 GPIO_ACTIVE_LOW
-            &gpio0 29 GPIO_ACTIVE_LOW
-            &gpio0 31 GPIO_ACTIVE_LOW
-        >;
-
-        diode-direction     = COL2ROW;
-        debounce-press-ms   = <1>;
-        debounce-release-ms = <5>;
-    };
+&kscan0 {
+    col-gpios
+        = <&gpio0 11 GPIO_ACTIVE_HIGH> // col5 in the schematic
+        , <&gpio1 13 GPIO_ACTIVE_HIGH> // col4 in the schematic
+        , <&gpio1 15  GPIO_ACTIVE_HIGH> // col3 in the schematic
+        , <&gpio0 2 GPIO_ACTIVE_HIGH> // col2 in the schematic
+        , <&gpio0 29  GPIO_ACTIVE_HIGH> // col1 in the schematic
+        , <&gpio0 31  GPIO_ACTIVE_HIGH> // col0 in the schematic
+        ;
+};
