@@ -1,40 +1,11 @@
-# config/west.yml  (exact așa, fara altceva înainte sau după)
-
 manifest:
-  defaults:
-    remote: zmk
-
   remotes:
-    - name: zmk
+    - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: zephyrproject
-      url-base: https://github.com/zephyrproject-rtos
-
   projects:
-    # PROIECTUL PRINCIPAL — numele TREBUIE să fie zmk
     - name: zmk
-      remote: zmk
-      repo-path: app        # doar directorul local, nu influenţează URL-ul
+      remote: zmkfirmware
       revision: main
       import: app/west.yml
-
-    # restul proiectelor Zephyr
-    - name: zephyr
-      remote: zephyrproject
-      repo-path: modules/zephyr
-      revision: v3.5.0
-
-    - name: hal_nordic
-      remote: zephyrproject
-      repo-path: modules/hal/nordic
-      revision: main
-
-    - name: nrfx
-      remote: zephyrproject
-      repo-path: modules/hal/nordic/nrfx
-      revision: main
-
-    - name: nrfxlib
-      remote: zephyrproject
-      repo-path: modules/hal/nordic/nrfxlib
-      revision: main
+  self:
+    path: config
