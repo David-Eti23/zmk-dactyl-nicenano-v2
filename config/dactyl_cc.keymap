@@ -6,7 +6,7 @@
 //  ###########        WORKING 2024/03/23       ###############
 //  ###########################################################
 // #############            LAYERS            #################
- 
+
 #define SYM_L   1
 #define NAV_L   2
 #define NAV2_L  3
@@ -45,9 +45,7 @@
     tapping-term-ms = <150>;
 };
 
-&sl {
-    release-after-ms = <2000>;
-};
+&sl { release-after-ms = <2000>; };
 
 / {
     conditional_layers {
@@ -93,50 +91,58 @@
         compatible = "zmk,keymap";
 
         /* ──────────────── LAYER 0 – DEFAULT ──────────────── */
+
         default_layer {
             bindings = <
-        /* R0 */ &kp GRAVE  &kp N1   &kp N2   &kp N3   &kp N4   &kp N5        &kp N6   &kp N7   &kp N8   &kp N9   &kp N0   &kp EQUAL
-        /* R1 */ &kp TAB    &kp Q    &kp W    &kp E    &kp R    &kp T         &kp Y    &kp U    &kp I    &kp O    &kp P    &kp MINUS
-        /* R2 */ &kp CAPS   &kp A    &kp S    &kp D    &kp F    &kp G         &kp H    &kp J    &kp K    &kp L    &kp SEMI &kp RBKT
-        /* R3 */ &kp LSFT   &kp Z    &kp X    &kp C    &kp V    &kp B         &kp N    &kp M    &kp COMMA &kp DOT &kp SLASH &kp RBKT
-        /* R4 */ &kp LCTRL  &kp LALT &kp LEFT &kp RIGHT &kp SPACE &kp ESC     &kp BSPC &kp ENTER &kp APP &kp LGUI &kp C_VOL_UP &kp C_VOL_DN
-        /* R5 */          &none   &none   &kp LGUI &mo LOWER &mo RAISE &kp ESC       &none   &none   &kp BSPC &kp ENTER &kp APP &kp LGUI
+&kp GRAVE  &kp N1    &kp N2    &kp N3     &kp N4     &kp N5        &kp N6     &kp N7     &kp N8     &kp N9    &kp N0        &kp EQUAL
+&kp TAB    &kp Q     &kp W     &kp E      &kp R      &kp T         &kp Y      &kp U      &kp I      &kp O     &kp P         &kp MINUS
+&kp CAPS   &kp A     &kp S     &kp D      &kp F      &kp G         &kp H      &kp J      &kp K      &kp L     &kp SEMI      &kp RBKT
+&kp LSHFT  &kp Z     &kp X     &kp C      &kp V      &kp B         &kp N      &kp M      &kp COMMA  &kp DOT   &kp SLASH     &kp RBKT
+&kp LCTRL  &kp LALT  &kp LEFT  &kp RIGHT  &kp SPACE  &kp RSHIFT    &kp BSPC   &kp ENTER  &kp APP    &kp LGUI  &kp C_VOL_UP  &kp C_VOL_DN
+                     &none     &none      &kp LGUI   &mo LOWER     &mo RAISE  &kp ESC    &none      &none
+                     
             >;
         };
 
         /* ──────────────── LAYER 1 – LOWER ──────────────── */
+
         LOWER {
             bindings = <
-        /* R0 */ &kp F1     &kp F2    &kp F3    &kp F4    &kp F5    &kp F6        &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
-        /* R1 */ &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT &kp CARET     &kp AMPS  &kp ASTERISK &kp LPAR &kp RPAR &kp UNDER &kp PLUS
-        /* R2 */ &kp TILDE  &kp Q     &kp W     &kp E     &kp R     &kp T         &kp PG_UP &kp HOME   &kp UP    &kp END   &kp PIPE  &kp GRAVE
-        /* R3 */ &kp CAPS   &kp A     &kp S     &kp D     &kp F     &kp G         &kp PG_DN &kp LEFT   &kp DOWN  &kp RIGHT &kp COLON &kp BSLH
-        /* R4 */ &kp LCTRL  &kp LALT  &none     &none     &kp SPACE &kp ESC       &kp INS   &none      &none     &none     &kp MUTE  &kp C_MUTE
-        /* R5 */          &none   &none   &kp LGUI &mo LOWER &mo RAISE &kp ESC       &none   &none   &none   &none   &none   &none
+&kp F1     &kp F2    &kp F3    &kp F4    &kp F5     &kp F6       &kp F7     &kp F8        &kp F9    &kp F10    &kp F11    &kp F12
+&kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT  &kp CARET    &kp AMPS   &kp ASTERISK  &kp LPAR  &kp RPAR   &kp UNDER  &kp PLUS
+&kp TILDE  &kp Q     &kp W     &kp E     &kp R      &kp T        &kp PG_UP  &kp HOME      &kp UP    &kp END    &kp PIPE   &kp GRAVE
+&kp CAPS   &kp A     &kp S     &kp D     &kp F      &kp G        &kp PG_DN  &kp LEFT      &kp DOWN  &kp RIGHT  &kp COLON  &kp BSLH
+&kp LCTRL  &kp LALT  &none     &none     &kp SPACE  &kp ESC      &kp INS    &none         &none     &none      &kp MUTE   &kp C_MUTE
+                     &none     &none     &kp LGUI   &mo LOWER    &mo RAISE  &kp ESC       &none     &none
+                     
             >;
         };
 
         /* ──────────────── LAYER 2 – RAISE ──────────────── */
+
         RAISE {
             bindings = <
-        /* R0 */ &kp F13    &kp F14   &kp F15   &kp F16   &kp F17   &kp F18       &kp F19   &kp F20   &kp F21   &kp F22   &kp F23   &kp F24
-        /* R1 */ &kp MINUS  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5        &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp EQUAL
-        /* R2 */ &kp LBKT   &kp Q     &kp W     &kp E     &kp R     &kp T         &kp Y     &kp U     &kp I     &kp O     &kp P     &kp RBKT
-        /* R3 */ &kp NON_US_BSLH &kp A &kp S    &kp D     &kp F     &kp G         &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp FSLH
-        /* R4 */ &kp LCTRL  &kp LALT  &kp LEFT  &kp RIGHT &kp SPACE &kp ESC       &kp BSPC  &kp ENTER &kp APP   &kp LGUI  &kp VOL_UP &kp VOL_DN
-        /* R5 */          &none   &none   &kp LGUI &mo LOWER &mo RAISE &kp ESC       &none   &none   &none   &none   &none   &none
+&kp F13          &kp F14   &kp F15   &kp F16    &kp F17    &kp F18      &kp F19    &kp F20    &kp F21  &kp F22   &kp F23     &kp F24
+&kp MINUS        &kp N1    &kp N2    &kp N3     &kp N4     &kp N5       &kp N6     &kp N7     &kp N8   &kp N9    &kp N0      &kp EQUAL
+&kp LBKT         &kp Q     &kp W     &kp E      &kp R      &kp T        &kp Y      &kp U      &kp I    &kp O     &kp P       &kp RBKT
+&kp NON_US_BSLH  &kp A     &kp S     &kp D      &kp F      &kp G        &kp H      &kp J      &kp K    &kp L     &kp SEMI    &kp FSLH
+&kp LCTRL        &kp LALT  &kp LEFT  &kp RIGHT  &kp SPACE  &kp ESC      &kp BSPC   &kp ENTER  &kp APP  &kp LGUI  &kp VOL_UP  &kp VOL_DN
+                           &none     &none      &kp LGUI   &mo LOWER    &mo RAISE  &kp ESC    &none    &none
+                           
             >;
         };
 
         /* ──────────────── LAYER 3 – SYMBOL ──────────────── */
+
         SYMBOL {
             bindings = <
-        /* R0 */ &bt BT_CLR &none &none &none &none &none          &none &none &none &none &none &none
-        /* R1 */ &bt BT_PRV &bt BT_NXT &none &none &none &none     &kp KP_PLUS &kp KP_MINUS &kp KP_ASTERISK &kp KP_SLASH &none &none
-        /* R2 */ &none &none &none &none &none &none               &kp LBKT &kp RBKT &kp LCURLY &kp RCURLY &kp LT &kp GT
-        /* R3 */ &none &none &none &none &none &none               &kp AMPS &kp PIPE &kp BSLH &kp CARET &kp PERCENT &kp HASH
-        /* R4 */ &none &none &none &none &none &none               &none &none &none &none &none &none
-        /* R5 */          &none &none &none &none &none &none          &none &none &none &none &none &none
+&bt BT_CLR  &none       &none  &none  &none  &none    &none        &none         &none            &none         &none        &none
+&bt BT_PRV  &bt BT_NXT  &none  &none  &none  &none    &kp KP_PLUS  &kp KP_MINUS  &kp KP_ASTERISK  &kp KP_SLASH  &none        &none
+&none       &none       &none  &none  &none  &none    &kp LBKT     &kp RBKT      &kp LCURLY       &kp RCURLY    &kp LT       &kp GT
+&none       &none       &none  &none  &none  &none    &kp AMPS     &kp PIPE      &kp BSLH         &kp CARET     &kp PERCENT  &kp HASH
+&none       &none       &none  &none  &none  &none    &none        &none         &none            &none         &none        &none
+                        &none  &none  &none  &none    &none        &none         &none            &none
+                        
             >;
         };
     };
