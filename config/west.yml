@@ -1,3 +1,5 @@
+# config/west.yml  (exact așa, fara altceva înainte sau după)
+
 manifest:
   defaults:
     remote: zmk
@@ -9,25 +11,29 @@ manifest:
       url-base: https://github.com/zephyrproject-rtos
 
   projects:
-    # --------------- aici era problema ----------------
-    - name: zmk                 # NU “app”!
+    # PROIECTUL PRINCIPAL — numele TREBUIE să fie zmk
+    - name: zmk
       remote: zmk
-      repo-path: app            # unde să-l cloneze local
+      repo-path: app        # doar directorul local, nu influenţează URL-ul
       revision: main
       import: app/west.yml
-    # --------------------------------------------------
+
+    # restul proiectelor Zephyr
     - name: zephyr
       remote: zephyrproject
       repo-path: modules/zephyr
       revision: v3.5.0
+
     - name: hal_nordic
       remote: zephyrproject
       repo-path: modules/hal/nordic
       revision: main
+
     - name: nrfx
       remote: zephyrproject
       repo-path: modules/hal/nordic/nrfx
       revision: main
+
     - name: nrfxlib
       remote: zephyrproject
       repo-path: modules/hal/nordic/nrfxlib
