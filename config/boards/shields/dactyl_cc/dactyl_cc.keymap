@@ -27,15 +27,18 @@
 
         default_layer {
             bindings = <
-&kp F1     &kp F2    &kp F3   &kp F4    &kp F5    &kp F6                             &kp F7    &kp F8    &kp F9    &kp F10   &kp F11  &kp F12        
-&kp MINUS  &kp N1    &kp N2   &kp N3    &kp N4    &kp N5                             &kp N6    &kp N7    &kp N8    &kp N9    &kp N0   &kp EQUALS
-&kp LBKT   &kp Q     &kp W    &kp E     &kp R     &kp T                              &kp Y     &kp U     &kp I     &kp O     &kp P    &kp RBKT
-&mo LOWER  &kp A     &kp S    &kp D     &kp F     &kp G                              &kp H     &kp J     &kp K     &kp L     &kp SEMI &kp SQT
-&kp LSHFT  &kp Z     &kp X    &kp C     &kp V     &kp B                              &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH &kp RSHFT
-               &kp GRAVE &kp BSLH &kp LPAR  &kp RPAR                                               &kp DOWN  &kp UP    &kp LBKT  &kp RBKT
-                                                      &kp EQUAL &kp MINUS   &kp LBKT  &kp RBKT
-                                                                &kp GRAVE   &kp BSPC
-                                             &kp LCTRL &kp LALT  &kp LGUI   &kp DEL   &kp RET   &kp SPACE
+    /* ──────────────── R0 ─────────────────────────────── */
+        &kp GRAVE &kp N1    &kp N2    &kp N3     &kp N4     &kp N5         &kp N6    &kp N7    &kp N8    &kp N9    &kp N0     &kp EQUAL
+    /* ──────────────── R1 ─────────────────────────────── */
+        &kp TAB   &kp Q     &kp W     &kp E      &kp R      &kp T          &kp Y     &kp U     &kp I     &kp O     &kp P      &kp MINUS
+    /* ──────────────── R2 ─────────────────────────────── */
+        &kp CAPS  &kp A     &kp S     &kp D      &kp F      &kp G          &kp H     &kp J     &kp K     &kp L     &kp SEMI   &kp RBKT
+    /* ──────────────── R3 ─────────────────────────────── */
+        &kp LSFT  &kp Z     &kp X     &kp C      &kp V      &kp B          &kp N     &kp M     &kp COMMA &kp DOT   &kp SLASH  &kp RBKT
+    /* ──────────────── R4 ─────────────────────────────── */
+        &kp LCTRL &kp LALT  &kp LEFT  &kp RIGHT  &kp SPACE  &kp ESC        &kp BSPC  &kp ENTER &kp APP   &kp LGUI  &kp C_VOL_UP &kp C_VOL_DN
+    /* ──────────────── R5 (thumb) ─────────────────────── */
+                     &none      &none      &kp LGUI &mo 1   &mo 2    &kp ESC          &none      &none      &kp BSPC  &kp ENTER   &kp APP     &kp LGUI
             >;
         };
     };
