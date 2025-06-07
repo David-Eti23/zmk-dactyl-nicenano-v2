@@ -1,11 +1,36 @@
 manifest:
+  defaults:
+    remote: zmk
+
   remotes:
-    - name: zmkfirmware
+    - name: zmk
       url-base: https://github.com/zmkfirmware
+    - name: zephyrproject
+      url-base: https://github.com/zephyrproject-rtos
+
   projects:
     - name: zmk
-      remote: zmkfirmware
+      remote: zmk
+      repo-path: app
       revision: main
       import: app/west.yml
-  self:
-    path: config
+
+    - name: zephyr
+      remote: zephyrproject
+      repo-path: modules/zephyr
+      revision: v3.5.0
+
+    - name: hal_nordic
+      remote: zephyrproject
+      repo-path: modules/hal/nordic
+      revision: main
+
+    - name: nrfx
+      remote: zephyrproject
+      repo-path: modules/hal/nordic/nrfx
+      revision: main
+
+    - name: nrfxlib
+      remote: zephyrproject
+      repo-path: modules/hal/nordic/nrfxlib
+      revision: main

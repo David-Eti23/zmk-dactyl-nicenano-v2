@@ -1,5 +1,14 @@
-on: [push, pull_request, workflow_dispatch]
+name: Build ZMK firmware
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
 
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    with:
+      config_path: config          # unde se află west.yml + boards/shields
+      build_matrix_path: build.yaml
