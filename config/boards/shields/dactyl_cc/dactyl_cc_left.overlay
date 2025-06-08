@@ -2,6 +2,17 @@
 
 #include "dactyl_cc.dtsi" // Notice that the main dtsi files are included in the overlay.
 
+kscan_pairing {
+        compatible = "zmk,kscan-direct-gpio";
+
+        input-gpios = < &gpio0 10 GPIO_ACTIVE_LOW >;
+
+        keymap = < &bt BT_CLR >;
+
+        debounce-press-ms   = <5>;
+        debounce-release-ms = <5>;
+};
+
 &kscan0 {
     col-gpios
         = <&gpio0 31 GPIO_ACTIVE_HIGH> // col5 in the schematic
