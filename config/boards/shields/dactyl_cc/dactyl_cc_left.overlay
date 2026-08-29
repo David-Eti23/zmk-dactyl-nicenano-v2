@@ -1,6 +1,10 @@
-// dactyl_cc_left.overlay
+#include "dactyl_cc.dtsi"
 
-#include "dactyl_cc.dtsi" // Notice that the main dtsi files are included in the overlay.
+/ {
+    chosen {
+        zephyr,display = &oled;
+    };
+};
 
 &kscan0 {
     col-gpios
@@ -11,4 +15,24 @@
         , <&gpio1 13 GPIO_ACTIVE_HIGH> // col1 in the schematic
         , <&gpio1 11 GPIO_ACTIVE_HIGH> // col0 in the schematic
         ;
+};
+
+&pro_micro_i2c {
+    status = "okay";
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        inversion-on;
+        prechargep = <0x22>;
+    };
 };

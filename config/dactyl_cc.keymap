@@ -2,115 +2,39 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-//  ###########################################################
-//  ###########        WORKING 2024/03/23       ###############
-//  ###########################################################
-// #############            LAYERS            #################
+#define BASE  0
+#define LOWER 1
 
-#define SYM_L   1
-#define NAV_L   2
-#define NAV2_L  3
-
-//#define OTHER_L 4
-
-#define DEFAULT 0
-#define LOWER   1
-#define RAISE   2
-#define SYMBOL  3
-
-// Desktop and tab navigation shortcuts		
-
-#define DESKTOP_LT   LC(LG(LEFT))
-#define DESKTOP_RT   LC(LG(RIGHT))
-#define WINDOW_LT    LA(LS(TAB))
-#define WINDOW_RT    LA(TAB)
-#define TAB_LT       LC(LS(TAB))
-#define TAB_RT       LC(TAB)
-
-// NOT USED  &kp LG(LC(LEFT))  &kp LG(LC(RIGHT))
-// Generic bindings
-
-#define KILL_WINDOW  LA(F4)
-#define MAXIMIZE     LG(UP)
-#define MINIMIZE     LG(DOWN)
-#define UN_MINIMIZE  LG(LC(N))
-
-&mt {
-    flavor = "hold-preferred";
-    tapping-term-ms = <500>;
+&kscan0 {
+    debounce-press-ms = <30>;
+    debounce-release-ms = <30>;
 };
-
-&lt {
-    flavor = "balanced";
-    tapping-term-ms = <150>;
-};
-
-&sl { release-after-ms = <2000>; };
 
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <4>;
-        };
-    };
-
-    macros {
-        ZMK_MACRO(inv_qm,
-
-        wait-ms = <10>;
-        tap-ms = <10>;
-        bindings =
-            <&macro_press &kp LALT>,
-            <&macro_tap &kp KP_N1 &kp KP_N6 &kp KP_N8>,
-            <&macro_release &kp LALT>;
-
-        )
-    };
-
-    behaviors {
-        //   td_mt_ls: tap_dance_mod_tap {
-        //       compatible = "zmk,behavior-tap-dance";
-        //       label = "TAP_DANCE_LSHIFT";
-        //       #binding-cells = <0>;
-        //       tapping-term-ms = <200>;
-        //       bindings = <&mt LSHIFT CAPSLOCK>, <&kp LCTRL>;
-        //   };
-        //   td_mt_rs: tap_dance_mod_tap {
-        //       compatible = "zmk,behavior-tap-dance";
-        //       label = "TAP_DANCE_RSHIFT";
-        //       #binding-cells = <0>;
-        //       tapping-term-ms = <200>;
-        //       bindings = <&mt RSHIFT CAPSLOCK>, <&kp RCTRL>;
-        //   };            
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        base {
+            display-name = "Base";
+
             bindings = <
-&kp GRAVE   &kp N1    &kp N2    &kp NUMBER_3  &kp N4      &kp N5        &kp N6            &kp N7           &kp N8         &kp N9             &kp N0            &kp EQUAL
-&kp TAB     &kp Q     &kp W     &kp E         &kp R       &kp T         &kp Y             &kp U            &kp I          &kp O              &kp P             &kp MINUS
-&kp CAPS    &kp A     &kp S     &kp D         &kp F       &kp G         &kp H             &kp J            &kp K          &kp L              &kp LEFT_BRACKET  &kp RBKT
-&kp LSHIFT  &kp Z     &kp X     &kp C         &kp V       &kp B         &kp N             &kp M            &kp SEMICOLON  &kp SQT            &kp COMMA         &kp FSLH
-&kp LCTRL   &kp LALT  &kp LEFT  &kp RIGHT     &kp SPACE   &kp RSHFT     &kp BACKSPACE     &kp ENTER        &kp DOWN       &kp UP             &kp PERIOD        &kp BACKSLASH
-                      &tog 1    &kp LEFT_WIN  &kp CLEAR2  &kp ESCAPE    &kp C_PLAY_PAUSE  &kp C_VOLUME_UP  &kp LG(L)      &kp C_VOLUME_DOWN
-                      &none     &none         &none       &none         &none             &none            &none          &none
+&kp GRAVE        &kp N1           &kp N2           &kp N3           &kp N4           &kp N5               &kp N6          &kp N7          &kp N8          &kp N9          &kp N0          &kp EQUAL
+&kp TAB          &kp Q            &kp W            &kp E            &kp R            &kp T                &kp Y           &kp U           &kp I           &kp O           &kp P           &kp MINUS
+&kp LCTRL        &kp A            &kp S            &kp D            &kp F            &kp G                &kp H           &kp J           &kp K           &kp L           &kp SEMICOLON   &kp SQT
+&kp LSHIFT       &kp Z            &kp X            &kp C            &kp V            &kp B                &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &kp RSHIFT
+                                                                  &tog LOWER        &kp SPACE            &kp BACKSPACE   &kp ENTER
             >;
         };
 
-        LOWER {
+        lower {
+            display-name = "Fn";
+
             bindings = <
-&kp F1          &kp F2        &kp F3      &kp F4   &kp F5           &kp F6        &kp F7           &kp F8           &kp F9           &kp F10  &kp F11         &kp F12
-&kp TAB         &none         &none       &none    &none            &none         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &none    &kp KP_NUMLOCK  &kp HOME
-&kp CAPS        &none         &none       &none    &none            &none         &bt BT_CLR       &bt BT_CLR_ALL   &none            &none    &kp SLASH       &kp END
-&kp LEFT_SHIFT  &none         &none       &none    &none            &none         &none            &none            &none            &none    &kp ASTERISK    &kp PAGE_UP
-&kp LCTRL       &kp LEFT_ALT  &none       &none    &none            &none         &none            &none            &none            &none    &kp MINUS       &kp PAGE_DOWN
-                              &kp ESCAPE  &kp INS  &kp PRINTSCREEN  &kp DELETE    &to 0            &bt BT_CLR_ALL   &kp DEL          &none
-                              &none       &none    &none            &none         &none            &none            &none            &none
+&kp F1           &kp F2           &kp F3           &kp F4           &kp F5           &kp F6               &kp F7          &kp F8          &kp F9          &kp F10         &kp F11         &kp F12
+&kp ESCAPE       &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4         &kp HOME        &kp PAGE_DOWN   &kp UP          &kp PAGE_UP     &kp END         &kp DELETE
+&kp LEFT_CONTROL &kp LEFT_ALT     &kp LEFT_GUI     &none            &none            &bt BT_CLR           &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp INSERT      &kp DELETE
+&kp CAPSLOCK     &kp C_MUTE       &kp C_VOLUME_DOWN &kp C_VOLUME_UP &kp C_PREVIOUS   &kp C_NEXT           &kp LBKT        &kp RBKT        &kp MINUS       &kp EQUAL       &kp BACKSLASH   &kp PRINTSCREEN
+                                                                  &to BASE          &trans               &trans          &trans
             >;
         };
     };
